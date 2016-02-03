@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+	
+	<context:component-scan base-package="com.vsii.softwarefacotry.user" />
+	
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory
+		 any requests from this url pattern /resources/**, Spring will look for the resources from the /resources/ instead
+	 -->
+	<!-- <resources location="/resources/" mapping="/resources/**"/> -->
+	
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/views/user/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	
+	
+	
+	<!-- <interceptors>
+      <beans:bean class="com.springmvc.interceptor.CustomRequestHandler" />
+    </interceptors>  -->
+	
+	<!-- Helper class to configure Tiles 3.x for the Spring Framework -->
+    <!-- See http://static.springsource.org/spring/docs/3.0.x/javadoc-api/org/springframework/web/servlet/view/tiles2/TilesConfigurer.html -->
+    <!-- The actual tiles templates are in the tiles-definitions.xml  -->
+    <!-- <beans:bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <beans:property name="definitions">
+            <beans:list>
+                <beans:value>/WEB-INF/tile-defs/templates.xml</beans:value>
+                <beans:value>/WEB-INF/tile-defs/definitions.xml</beans:value>
+            </beans:list>
+        </beans:property>
+    </beans:bean>  -->
+    <!-- <beans:bean id="viewResolver"  
+        class="org.springframework.web.servlet.view.UrlBasedViewResolver">  
+        <beans:property name="viewClass">  
+            <beans:value>  
+                org.springframework.web.servlet.view.tiles3.TilesView  
+            </beans:value>  
+        </beans:property>  
+    </beans:bean>  
+    <beans:bean id="tilesConfigurer"  
+        class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">  
+        <beans:property name="definitions">  
+            <beans:list>  
+                <beans:value>/WEB-INF/tiles.xml</beans:value>  
+            </beans:list>  
+        </beans:property>  
+    </beans:bean> -->  
+    <!-- Begin internationalization configuration -->
+    <!-- <interceptors>
+		<beans:bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<beans:property name="paramName" value="language" />
+		</beans:bean>
+	</interceptors>
+	<beans:bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<beans:property name="basenames" value="WEB-INF/i18n/application" />
+		<beans:property name="fallbackToSystemLocale" value="false" />
+		<beans:property name="defaultEncoding" value="UTF-8"/>
+	</beans:bean> -->
+	<!-- End internationalization configuration -->
+</beans:beans>

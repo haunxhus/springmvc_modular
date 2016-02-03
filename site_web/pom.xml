@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>site</groupId>
+    <artifactId>com.vsii.softwarefactory</artifactId>
+    <version>1.0</version>
+  </parent>
+  <groupId>site_web</groupId>
+  <artifactId>site_web</artifactId>
+  <version>1.1</version>
+  <packaging>war</packaging>
+  <name>site_web Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    	<groupId>com.vsii.softwarefactory.user</groupId>
+    	<artifactId>site_user</artifactId>
+    	<version>1.1</version>
+    </dependency>
+    <dependency>
+    	<groupId>site_style</groupId>
+    	<artifactId>site_style</artifactId>
+    	<version>1.1</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>site_web</finalName>
+  </build>
+</project>
